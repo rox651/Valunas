@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+   --foreground-rgb: 0, 0, 0;
+   --background-start-rgb: 214, 219, 220;
+   --background-end-rgb: 255, 255, 255;
+}
+
+@layer components {
+   .underline-link {
+      @apply relative max-w-max  transition-colors before:absolute before:-bottom-1 before:h-[2px] before:w-full before:origin-left before:scale-x-0 before:bg-light-orchid-500 before:transition-transform before:duration-300 hover:text-light-orchid-500    hover:before:scale-x-100;
+   }
+}
