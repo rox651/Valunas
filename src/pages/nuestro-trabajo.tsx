@@ -1,4 +1,4 @@
-import { MasonryGridImages } from '@/components'
+import { Loading, MasonryGridImages } from '@/components'
 import { Sofia } from 'next/font/google'
 import Head from 'next/head'
 import { IoLogoInstagram } from 'react-icons/io'
@@ -16,6 +16,7 @@ export default function Home() {
       <Head>
         <title>Nuestro trabajo | Valuñas - Nails Spa</title>
       </Head>
+      <Loading/>
 
       <section className={`${sofia.className} relative z-10  py-5 lg:py-7 `}>
         <div className="mx-auto  max-w-7xl space-y-5 px-5">

@@ -16,7 +16,7 @@
     "clsx": "^1.2.1",
     "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
-    "gsap": "^3.11.5",
+    "framer-motion": "^10.12.4",
     "next": "13.3.0",
     "next-transpile-modules": "^10.0.0",
     "postcss": "8.4.21",

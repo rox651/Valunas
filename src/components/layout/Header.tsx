@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Poppins } from 'next/font/google'
+import { Poppins, Vibur } from 'next/font/google'
 import { useState } from 'react'
 import clsx from 'clsx'
 
@@ -14,6 +14,13 @@ import { HandCircle } from '../icons'
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+const vibur = Vibur({
+  weight: ['400'],
+  style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
 })
@@ -34,7 +41,11 @@ const Header = () => {
       <div className="  mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
         <HiOutlineMenuAlt1 onClick={toggleNavBar} className="text-xl lg:hidden" role="button" />
         <Link href="/">
-          <HandCircle classNames="w-16 h-16 transition-opacity hover:opacity-80" />
+          <h1
+            className={`${vibur.className}  relative z-10 font-bold text-light-orchid-500 text-5xl`}
+          >
+            Valuñas
+          </h1>
         </Link>
         <nav
           role="menu"

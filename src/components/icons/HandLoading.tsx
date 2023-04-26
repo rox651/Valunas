@@ -1,8 +1,4 @@
-import clsx from 'clsx'
-import { useInView } from 'react-intersection-observer'
-
-const Hand = () => {
-  const { ref, inView } = useInView()
+const HandLoading = () => {
   return (
     <svg
       width={100}
@@ -10,10 +6,9 @@ const Hand = () => {
       viewBox="0 0 412 411"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={clsx(inView && 'animate-draw-hand', 'mx-auto h-52 w-52 stroke-black stroke-2 lg:h-72 lg:w-72 ')}
+      className="mx-auto h-52 w-52 animate-draw-hand-loading stroke-black stroke-2 lg:h-72 lg:w-72 "
       fillOpacity={0}
       style={{ strokeDasharray: 4500 }}
-      ref={ref}
     >
       <g mask="url(#mask2_146_390)">
         <path
@@ -24,5 +19,4 @@ const Hand = () => {
     </svg>
   )
 }
-
-export default Hand
+export default HandLoading

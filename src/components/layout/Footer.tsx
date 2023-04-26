@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useMemo } from 'react'
 import { footerNavigation } from '@/utils/constants/'
+import { Hand } from '../icons'
 
 export const Footer = () => {
   const date = useMemo(() => new Date(), [])
@@ -8,6 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+      <Hand />
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {footerNavigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
