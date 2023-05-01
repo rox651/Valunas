@@ -7,12 +7,12 @@ export const footerNavigation = {
       name: 'Sobre nosotras',
     },
     {
-      href: '/nuestro-trabajo',
-      name: 'Nuestro trabajo',
+      href: '/#precios',
+      name: 'Lista de precios',
     },
     {
-      href: '',
-      name: 'Contactanos',
+      href: '/#nuestro-trabajo',
+      name: 'Nuestro trabajo',
     },
   ],
   social: [

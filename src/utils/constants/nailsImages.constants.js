@@ -72,8 +72,8 @@ export const nailsImages = [
     name: 'Uñas - Valunas Nails Spa 14',
     src: NailImg14,
   },
-  {
-    name: 'Uñas - Valunas Nails Spa 15',
-    src: NailImg15,
-  },
+  // {
+  //   name: 'Uñas - Valunas Nails Spa 15',
+  //   src: NailImg15,
+  // },
 ]

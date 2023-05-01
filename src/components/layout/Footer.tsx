@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
-      <Hand />
+        <Hand />
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           {footerNavigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
@@ -28,7 +28,7 @@ export const Footer = () => {
               <a
                 key={item.name}
                 href={item.href}
-                target='_blank'
+                target="_blank"
                 className=" text-light-orchid-500 transition-colors hover:text-light-orchid-900"
               >
                 <span className="sr-only">{item.name}</span>
@@ -38,7 +38,7 @@ export const Footer = () => {
           })}
         </div>
         <p className="mt-8 text-center text-xs text-light-orchid-700 ">
-          &copy; {date.getFullYear()} Valunas - Nails Spa, Todos los derechos reservados.
+          &copy; {date.getFullYear()} Valuñas - Nails Spa, Todos los derechos reservados.
         </p>
       </div>
     </footer>

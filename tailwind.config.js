@@ -23,16 +23,9 @@ module.exports = {
           '50%': { stroke: '#c86dc1', 'stroke-opacity': '1' },
           '100%': { 'stroke-dashoffset': '0', stroke: '#c86dc1', 'stroke-opacity': '1' },
         },
-        drawLoading: {
-          '0%': { 'stroke-dashoffset': '4500', 'stroke-opacity': '0' },
-          '10%': { 'stroke-opacity': '1' },
-          '50%': { stroke: '#c86dc1', 'stroke-opacity': '1' },
-          '100%': { 'stroke-dashoffset': '0', stroke: '#c86dc1', 'stroke-opacity': '1', "opacity":"0" },
-        },
       },
       animation: {
         'draw-hand': 'draw 8s ease forwards',
-        'draw-hand-loading': 'drawLoading 8s ease forwards',
       },
       colors: {
         'light-orchid': {

@@ -8,8 +8,7 @@ import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { FaUserCircle } from 'react-icons/fa'
 import HeaderLink from './HeaderLink'
 import { navLinks } from '@/utils/constants/'
-
-import { HandCircle } from '../icons'
+import { useRouter } from 'next/router'
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800'],
@@ -26,6 +25,7 @@ const vibur = Vibur({
 })
 
 const Header = () => {
+  const router = useRouter()
   const [isNavbarOpen, setIsNavbarOpen] = useState<Boolean>(false)
 
   function toggleNavBar() {
@@ -41,11 +41,7 @@ const Header = () => {
       <div className="  mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
         <HiOutlineMenuAlt1 onClick={toggleNavBar} className="text-xl lg:hidden" role="button" />
         <Link href="/">
-          <h1
-            className={`${vibur.className}  relative z-10 font-bold text-light-orchid-500 text-5xl`}
-          >
-            Valuñas
-          </h1>
+          <h1 className={`${vibur.className}  relative z-10 text-5xl font-bold text-light-orchid-500`}>Valuñas</h1>
         </Link>
         <nav
           role="menu"
@@ -59,6 +55,7 @@ const Header = () => {
             className="block text-2xl text-white lg:hidden"
             role="button"
           />
+
           {navLinks.map((link) => (
             <HeaderLink closeNavBar={closeNavBar} link={link} key={`${link.name} - header`} />
           ))}

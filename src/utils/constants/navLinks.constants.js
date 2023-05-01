@@ -3,13 +3,16 @@ export const navLinks = [
     href: '/#sobre-nosotras',
     name: 'Sobre nosotras',
   },
-
   {
-    href: '/nuestro-trabajo',
+    href: '/#precios',
+    name: 'Lista de precios',
+  },
+  {
+    href: '/#nuestro-trabajo',
     name: 'Nuestro trabajo',
   },
   {
-    href: '/contactanos',
+    href: '/#contactanos',
     name: 'Contactanos',
   },
 ]
