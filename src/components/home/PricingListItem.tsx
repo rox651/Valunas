@@ -8,7 +8,9 @@ interface pricingList {
 }
 
 const PricingListItem = ({ list }: { list: pricingList }) => {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  })
   return (
     <li
       ref={ref}

@@ -1,19 +1,8 @@
-import { Poppins, Sofia } from 'next/font/google'
+import getFonts from '@/utils/helpers/fonts'
 import PricingListItem from './PricingListItem'
 import { listOfPrices } from '@/utils/constants/'
 
-const sofia = Sofia({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-const poppins = Poppins({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { sofia, poppins } = getFonts()
 
 const Pricing = () => {
   return (

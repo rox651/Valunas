@@ -1,22 +1,11 @@
 import Image from 'next/image'
-import { Vibur, Sofia } from 'next/font/google'
+import getFonts from '@/utils/helpers/fonts'
 import HandLeft from '/public/images/mano-1.png'
 import HandRight from '/public/images/mano-2.png'
 import Particles from './Particles'
-import { WhatsAppLink } from '../common'
+import { WhatsAppLink } from './common'
 
-const sofia = Sofia({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-const vibur = Vibur({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { vibur, sofia } = getFonts()
 
 const Home = () => {
   return (

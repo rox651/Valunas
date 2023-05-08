@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/date-fns": "^2.6.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
+    "@types/react-big-calendar": "^1.6.3",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
@@ -21,6 +23,7 @@
     "nextjs-progressbar": "^0.0.16",
     "postcss": "8.4.21",
     "react": "18.2.0",
+    "react-big-calendar": "^1.6.9",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-intersection-observer": "^9.4.3",

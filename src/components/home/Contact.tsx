@@ -1,19 +1,8 @@
-import { Poppins, Sofia } from 'next/font/google'
-import { WhatsAppLink } from '../common'
+import getFonts from '@/utils/helpers/fonts'
+import { WhatsAppLink } from './common'
 
-const sofia = Sofia({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { poppins, sofia } = getFonts()
 
-const poppins = Poppins({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
 const Contact = () => {
   return (
     <section

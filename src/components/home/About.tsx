@@ -1,26 +1,19 @@
 import Image from 'next/image'
-import { Poppins, Sofia } from 'next/font/google'
 import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
-
+import getFonts from '@/utils/helpers/fonts'
 import AboutImg from '/public/images/Cuidado de uñas - Valunas Nails Spa.jpg'
 
-const sofia = Sofia({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-const poppins = Poppins({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { poppins, sofia } = getFonts()
 
 const About = () => {
-  const { ref: title, inView: inViewTitle } = useInView()
-  const { ref: text, inView: inViewText } = useInView()
+  const { ref: title, inView: inViewTitle } = useInView({
+    triggerOnce: true,
+  })
+  const { ref: text, inView: inViewText } = useInView({
+    triggerOnce: true,
+  })
+
   return (
     <section id="sobre-nosotras" className={` ${sofia.className} relative z-10 bg-light-orchid-200 py-5 lg:py-10`}>
       <div className="  mx-auto  grid  max-w-7xl items-center gap-5 px-5 md:grid-cols-[1.3fr_1fr] md:gap-10  ">

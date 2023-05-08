@@ -1,14 +1,8 @@
-import React from 'react'
-import { IoLogoInstagram } from 'react-icons/io'
-import { MasonryGridImages } from '../our-work'
-import { Sofia } from 'next/font/google'
+import getFonts from '@/utils/helpers/fonts'
+import { MasonryGridImages } from './our-work'
 
-const sofia = Sofia({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { sofia } = getFonts()
+
 const OurWork = () => {
   return (
     <section id="nuestro-trabajo" className={`${sofia.className} relative z-10  py-5 lg:py-7 `}>

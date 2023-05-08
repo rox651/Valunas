@@ -8,7 +8,6 @@ import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { FaUserCircle } from 'react-icons/fa'
 import HeaderLink from './HeaderLink'
 import { navLinks } from '@/utils/constants/'
-import { useRouter } from 'next/router'
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800'],
@@ -25,7 +24,6 @@ const vibur = Vibur({
 })
 
 const Header = () => {
-  const router = useRouter()
   const [isNavbarOpen, setIsNavbarOpen] = useState<Boolean>(false)
 
   function toggleNavBar() {

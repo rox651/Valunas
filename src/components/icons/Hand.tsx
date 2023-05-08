@@ -2,7 +2,9 @@ import clsx from 'clsx'
 import { useInView } from 'react-intersection-observer'
 
 const Hand = () => {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  })
   return (
     <svg
       width={100}
