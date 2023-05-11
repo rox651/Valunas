@@ -1,10 +1,12 @@
 import { useRef } from 'react'
-import { useOnClickOutside, useToggle } from '@/hooks'
+import { useOnClickOutside } from '@/hooks'
+import { useCalendarUI } from '@/store'
 
 const useModalInterface = () => {
   const modalRef = useRef(null)
-  const [isOpenModal, setIsOpenModal] = useToggle(true)
-  const closeModal = () => setIsOpenModal(false)
+  const isOpenModal = useCalendarUI((state) => state.isOpenModal)
+  const closeModal = useCalendarUI((state) => state.closeModal)
+
   useOnClickOutside(modalRef, closeModal)
   return { modalRef, isOpenModal }
 }

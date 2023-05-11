@@ -1,1 +1,2 @@
-export { default as fonts } from './helpers/fonts'
+export * from './helpers'
+export * from './index'

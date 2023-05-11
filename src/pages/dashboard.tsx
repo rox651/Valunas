@@ -1,5 +1,5 @@
+import { DashBoardCalendar } from '@/components'
 import Head from 'next/head'
-import { BigCalendar } from '@/components'
 
 const dashboard = () => {
   return (
@@ -7,7 +7,7 @@ const dashboard = () => {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <BigCalendar />
+      <DashBoardCalendar />
     </div>
   )
 }

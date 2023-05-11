@@ -1,43 +1,38 @@
 import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-import { addHours } from 'date-fns'
-import { localizer, getCalendarMessage } from '@/utils/helpers'
+import { useCalendarStore, useCalendarUI } from '@/store'
+import { localizer, getCalendarMessage } from '@/utils'
+
 import CalendarEvent from './CalendarEvent'
 import CalendarModal from './CalendarModal'
 
-const events = [
-  {
-    title: 'Manicura',
-    notes: 'Hay que comprar pastel',
-    start: new Date(),
-    end: addHours(new Date(), 2),
-    bgColor: '#c86dc1',
-    user: {
-      _id: '123',
-      name: 'homero',
-    },
-  },
-]
+const DashBoardCalendar = () => {
+  const events = useCalendarStore((state) => state.events)
+  const openModal = useCalendarUI((state) => state.openModal)
 
-const BigCalendar = () => {
+  const onDoubleClick = () => {
+    openModal()
+  }
+
   return (
     <>
       <Calendar
         culture="es"
         localizer={localizer}
         events={events}
-        startAccessor="start"
-        endAccessor="end"
+        startAccessor="date"
+        endAccessor="date"
         style={{ height: 800 }}
         messages={getCalendarMessage()}
         components={{
           event: CalendarEvent,
         }}
+        onDoubleClickEvent={onDoubleClick}
       />
       <CalendarModal />
     </>
   )
 }
 
-export default BigCalendar
+export default DashBoardCalendar

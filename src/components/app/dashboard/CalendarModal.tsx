@@ -1,18 +1,21 @@
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
+
 import DatePicker, { registerLocale } from 'react-datepicker'
-import clsx from 'clsx'
-import { useModalInterface } from '@/hooks'
-import { CalendarInputs } from '../types'
+import es from 'date-fns/locale/es'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import es from 'date-fns/locale/es'
+import clsx from 'clsx'
+
+import { useModalInterface } from '@/hooks'
+import { CalendarEventProps } from '../types'
+
 registerLocale('es', es)
 
 const CalendarModal = () => {
   const { modalRef, isOpenModal } = useModalInterface()
 
-  const { control, register, handleSubmit } = useForm<CalendarInputs>()
-  const onSubmit: SubmitHandler<CalendarInputs> = (data) => console.log(data)
+  const { control, register, handleSubmit } = useForm<CalendarEventProps>()
+  const onSubmit: SubmitHandler<CalendarEventProps> = (data) => console.log(data)
 
   return (
     <div
@@ -65,7 +68,7 @@ const CalendarModal = () => {
 
         <button
           type="submit"
-          className=" mx-auto mt-8 flex max-w-max items-center gap-2 rounded-md border  border-light-orchid-500 bg-light-orchid-500 px-5 py-2 font-medium text-light-orchid-50 transition-colors hover:bg-light-orchid-50 hover:text-light-orchid-500 md:text-lg"
+          className="mx-auto mt-8 flex max-w-max items-center gap-2 rounded-md border  border-light-orchid-500 bg-light-orchid-500 px-5 py-2 font-medium text-light-orchid-50 transition-colors hover:bg-light-orchid-50 hover:text-light-orchid-500 md:text-lg"
         >
           Pedir cita
         </button>
