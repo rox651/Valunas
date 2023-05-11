@@ -1,9 +1,10 @@
-import { Calendar, Event, EventPropGetter } from 'react-big-calendar'
+import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import { addHours } from 'date-fns'
 import { localizer, getCalendarMessage } from '@/utils/helpers'
 import CalendarEvent from './CalendarEvent'
+import CalendarModal from './CalendarModal'
 
 const events = [
   {
@@ -28,12 +29,13 @@ const BigCalendar = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ width: '70%', height: 800 }}
+        style={{ height: 800 }}
         messages={getCalendarMessage()}
         components={{
           event: CalendarEvent,
         }}
       />
+      <CalendarModal />
     </>
   )
 }
