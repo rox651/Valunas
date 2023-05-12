@@ -19,7 +19,7 @@ const useCalendarModal = (reset: UseFormReset<CalendarEventProps>) => {
 
       return
     }
-  }, [activeEvent])
+  }, [activeEvent, reset])
 
   return { modalRef, closeModal, isOpenModal, addNewActive }
 }
