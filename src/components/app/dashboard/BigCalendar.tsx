@@ -5,14 +5,19 @@ import { useCalendarStore, useCalendarUI } from '@/store'
 import { localizer, getCalendarMessage } from '@/utils'
 
 import CalendarEvent from './CalendarEvent'
-import CalendarModal from './CalendarModal'
+import { CalendarEventProps } from '../types'
 
 const DashBoardCalendar = () => {
   const events = useCalendarStore((state) => state.events)
+  const updateActiveEvent = useCalendarStore((state) => state.updateActiveEvent)
   const openModal = useCalendarUI((state) => state.openModal)
 
   const onDoubleClick = () => {
     openModal()
+  }
+
+  const onSelect = (event: CalendarEventProps) => {
+    updateActiveEvent(event)
   }
 
   return (
@@ -28,9 +33,9 @@ const DashBoardCalendar = () => {
         components={{
           event: CalendarEvent,
         }}
+        onSelectEvent={onSelect}
         onDoubleClickEvent={onDoubleClick}
       />
-      <CalendarModal />
     </>
   )
 }

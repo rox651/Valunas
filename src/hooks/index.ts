@@ -1,4 +1,3 @@
-export * from './index'
-export { default as useModalInterface } from './useModalInterface'
+export { default as useCalendarModal } from './useCalendarModal'
 export * from './useOnClickOutside'
 export * from './useToggle'

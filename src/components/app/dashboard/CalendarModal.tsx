@@ -6,16 +6,32 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 import clsx from 'clsx'
 
-import { useModalInterface } from '@/hooks'
+import { useCalendarModal } from '@/hooks'
 import { CalendarEventProps } from '../types'
+import { ErrorFormMessage } from '../common'
 
 registerLocale('es', es)
 
-const CalendarModal = () => {
-  const { modalRef, isOpenModal } = useModalInterface()
+const formValidations = {
+  name: { required: 'El nombre es obligatorio' },
+  date: { required: 'La fecha de la cita es obligatoria' },
+  appointmentType: { required: 'El servicio es obligatorio' },
+}
 
-  const { control, register, handleSubmit } = useForm<CalendarEventProps>()
-  const onSubmit: SubmitHandler<CalendarEventProps> = (data) => console.log(data)
+const CalendarModal = () => {
+  const {
+    control,
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<CalendarEventProps>()
+  const { modalRef, isOpenModal, addNewActive, closeModal } = useCalendarModal(reset)
+
+  const onSubmit: SubmitHandler<CalendarEventProps> = (data) => {
+    addNewActive(data)
+    closeModal()
+  }
 
   return (
     <div
@@ -28,19 +44,22 @@ const CalendarModal = () => {
       <form
         ref={modalRef}
         onSubmit={handleSubmit(onSubmit)}
-        className=" grid h-full max-h-[400px] w-full max-w-[500px] place-items-center overflow-y-auto rounded-md bg-white p-10"
+        className=" grid h-full max-h-[500px] w-full max-w-[500px] place-items-center overflow-y-auto rounded-md bg-white p-10"
       >
         <h2 className="mb-5  text-center text-4xl font-semibold">Asigna tu cita</h2>
 
         <fieldset className=" grid w-full">
           <label htmlFor="name">Nombre</label>
-          <input className="border px-3 py-2 outline-none" type="text" {...register('name')} />
+          <input className="border px-3 py-2 outline-none" type="text" {...register('name', formValidations.name)} />
+          {errors.name && <ErrorFormMessage message={errors.name.message} />}
         </fieldset>
+
         <fieldset className="grid w-full">
           <label htmlFor="name">Dia de la cita</label>
           <Controller
             control={control}
             name="date"
+            rules={formValidations.date}
             render={({ field: { onChange, value } }) => (
               <DatePicker
                 className=" w-full border px-2 py-1 capitalize outline-none"
@@ -56,16 +75,25 @@ const CalendarModal = () => {
               />
             )}
           />
+          {errors.date && <ErrorFormMessage message={errors.date.message} />}
         </fieldset>
         <fieldset className="grid w-full">
           <label htmlFor="">Servicio</label>
-          <select {...register('appointmentType')} className="border px-2 py-1 outline-none">
+          <select
+            {...register('appointmentType', formValidations.appointmentType)}
+            className="border px-2 py-1 outline-none"
+          >
             <option value="Manos y pies tradi">Manos y pies tradi</option>
             <option value="Manos y pies semi">Manos y pies semi</option>
             <option value="Acrílico esculpido">Acrílico esculpido</option>
           </select>
+          {errors.appointmentType && <ErrorFormMessage message={errors.appointmentType.message} />}
         </fieldset>
 
+        <fieldset className=" grid w-full">
+          <label htmlFor="name">Descripcion (Opcional)</label>
+          <input className="border px-3 py-2 outline-none" type="text" {...register('description')} />
+        </fieldset>
         <button
           type="submit"
           className="mx-auto mt-8 flex max-w-max items-center gap-2 rounded-md border  border-light-orchid-500 bg-light-orchid-500 px-5 py-2 font-medium text-light-orchid-50 transition-colors hover:bg-light-orchid-50 hover:text-light-orchid-500 md:text-lg"

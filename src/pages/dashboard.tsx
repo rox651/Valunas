@@ -1,4 +1,4 @@
-import { DashBoardCalendar } from '@/components'
+import { AddEventButton, BigCalendar, CalendarModal } from '@/components'
 import Head from 'next/head'
 
 const dashboard = () => {
@@ -7,7 +7,9 @@ const dashboard = () => {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <DashBoardCalendar />
+      <BigCalendar />
+      <CalendarModal />
+      <AddEventButton />
     </div>
   )
 }
