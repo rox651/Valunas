@@ -1,7 +1,6 @@
-import getFonts from '@/utils/helpers/fonts'
+import { projectFonts } from '@/utils'
 import { MasonryGridImages } from './our-work'
-
-const { sofia } = getFonts()
+const { sofia } = projectFonts
 
 const OurWork = () => {
   return (

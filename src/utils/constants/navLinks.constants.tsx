@@ -1,20 +1,27 @@
 import { IoLogoWhatsapp, IoLogoInstagram } from 'react-icons/io'
 import { FaTiktok } from 'react-icons/fa'
+
+export const navLinks = [
+  {
+    href: '/#sobre-nosotras',
+    name: 'Sobre nosotras',
+  },
+  {
+    href: '/#precios',
+    name: 'Lista de precios',
+  },
+  {
+    href: '/#nuestro-trabajo',
+    name: 'Nuestro trabajo',
+  },
+  {
+    href: '/#contactanos',
+    name: 'Contactanos',
+  },
+]
+
 export const footerNavigation = {
-  main: [
-    {
-      href: '/#sobre-nosotras',
-      name: 'Sobre nosotras',
-    },
-    {
-      href: '/#precios',
-      name: 'Lista de precios',
-    },
-    {
-      href: '/#nuestro-trabajo',
-      name: 'Nuestro trabajo',
-    },
-  ],
+  main: [...navLinks],
   social: [
     {
       name: 'Instagram',

@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import getFonts from '@/utils/helpers/fonts'
+import { projectFonts } from '@/utils'
 import HandLeft from '/public/images/mano-1.png'
 import HandRight from '/public/images/mano-2.png'
 import Particles from './Particles'
 import { WhatsAppLink } from './common'
 
-const { vibur, sofia } = getFonts()
+const { vibur, sofia } = projectFonts
 
 const Home = () => {
   return (

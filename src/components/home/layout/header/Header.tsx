@@ -1,27 +1,16 @@
 import Link from 'next/link'
-import { Poppins, Vibur } from 'next/font/google'
 import { useState } from 'react'
 import clsx from 'clsx'
 
 import { IoMdCloseCircleOutline } from 'react-icons/io'
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { FaUserCircle } from 'react-icons/fa'
+
+import { navLinks, projectFonts } from '@/utils'
+
 import HeaderLink from './HeaderLink'
-import { navLinks } from '@/utils/constants/'
 
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-const vibur = Vibur({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+const { poppins, vibur } = projectFonts
 
 const Header = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState<Boolean>(false)

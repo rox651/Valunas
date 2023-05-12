@@ -25,12 +25,8 @@ const vibur = Vibur({
  * Use this instead of exporting and creating the variable anytime you'll need it
  */
 
-function getFonts() {
-  return {
-    sofia,
-    poppins,
-    vibur,
-  }
+export const projectFonts = {
+  sofia,
+  poppins,
+  vibur,
 }
-
-export default getFonts

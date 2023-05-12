@@ -1,7 +1,7 @@
-import getFonts from '@/utils/helpers/fonts'
+import { projectFonts } from '@/utils'
 import { WhatsAppLink } from './common'
 
-const { poppins, sofia } = getFonts()
+const { poppins, sofia } = projectFonts
 
 const Contact = () => {
   return (

@@ -8,7 +8,6 @@ const AddEventButton = () => {
   const onClick = () => {
     updateActiveEvent({
       _id: null,
-      name: '',
       date: new Date(),
       description: '',
       appointmentType: '',

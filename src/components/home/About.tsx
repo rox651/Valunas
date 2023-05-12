@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import clsx from 'clsx'
-import getFonts from '@/utils/helpers/fonts'
+import { projectFonts } from '@/utils'
+
 import AboutImg from '/public/images/Cuidado de uñas - Valunas Nails Spa.jpg'
 
-const { poppins, sofia } = getFonts()
+const { poppins, sofia } = projectFonts
 
 const About = () => {
   const { ref: title, inView: inViewTitle } = useInView({

@@ -1,2 +1,1 @@
-export * from './index'
-export * from './useCalendarUI'
+export * from './useCalendarUI';

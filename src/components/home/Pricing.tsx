@@ -1,8 +1,7 @@
-import getFonts from '@/utils/helpers/fonts'
+import { listOfPrices, projectFonts } from '@/utils'
 import PricingListItem from './PricingListItem'
-import { listOfPrices } from '@/utils/constants/'
 
-const { sofia, poppins } = getFonts()
+const { sofia, poppins } = projectFonts
 
 const Pricing = () => {
   return (
