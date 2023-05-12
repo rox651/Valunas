@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 
 import DatePicker, { registerLocale } from 'react-datepicker'
@@ -26,12 +27,20 @@ const CalendarModal = () => {
     reset,
     formState: { errors },
   } = useForm<CalendarEventProps>()
-  const { modalRef, isOpenModal, addNewActive, closeModal } = useCalendarModal(reset)
+  const { modalRef, isOpenModal, addNewActive, closeModal, activeEvent } = useCalendarModal()
 
   const onSubmit: SubmitHandler<CalendarEventProps> = (data) => {
     addNewActive(data)
     closeModal()
   }
+
+  useEffect(() => {
+    if (activeEvent !== null) {
+      reset({ ...activeEvent })
+
+      return
+    }
+  }, [activeEvent])
 
   return (
     <div

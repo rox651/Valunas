@@ -1,10 +1,8 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useOnClickOutside } from '@/hooks'
 import { useCalendarUI, useCalendarStore } from '@/store'
-import { UseFormReset } from 'react-hook-form'
-import { CalendarEventProps } from '@/components'
 
-const useCalendarModal = (reset: UseFormReset<CalendarEventProps>) => {
+const useCalendarModal = () => {
   const modalRef = useRef(null)
   const isOpenModal = useCalendarUI((state) => state.isOpenModal)
   const closeModal = useCalendarUI((state) => state.closeModal)
@@ -13,15 +11,7 @@ const useCalendarModal = (reset: UseFormReset<CalendarEventProps>) => {
 
   useOnClickOutside(modalRef, closeModal)
 
-  useEffect(() => {
-    if (activeEvent !== null) {
-      reset({ ...activeEvent })
-
-      return
-    }
-  }, [])
-
-  return { modalRef, closeModal, isOpenModal, addNewActive }
+  return { modalRef, closeModal, isOpenModal, addNewActive, activeEvent }
 }
 
 export default useCalendarModal
